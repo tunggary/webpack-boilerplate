@@ -1,10 +1,9 @@
 const path = require("path");
-const webpack = require("webpack");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: ["./client/index.js", "./client/index.scss", "webpack-hot-middleware/client"],
+  entry: "./client/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.bundle.js",
@@ -28,7 +27,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./client/index.html",
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
   ],
 };
